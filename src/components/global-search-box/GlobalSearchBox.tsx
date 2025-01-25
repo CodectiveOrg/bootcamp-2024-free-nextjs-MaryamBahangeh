@@ -34,7 +34,9 @@ function GlobalSearchBox() {
   };
 
   useEffect(() => {
-    if (!filters.name) setQuery("");
+    if (!filters.name) {
+      setQuery("");
+    }
   }, [filters]);
 
   return (

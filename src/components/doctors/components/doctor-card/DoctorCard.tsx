@@ -30,7 +30,7 @@ function DoctorCard({ doctor }: Props) {
             <div className={styles["doctor-info"]}>
               <div className={styles.name}>{doctor.name}</div>
               <div className={styles.description}>
-                {doctor.specialityName} - {doctor.specialtyDegreeName}
+                {doctor.specialityName} - {doctor.degreeName}
               </div>
               <div className={styles.rate}>
                 <StarBold color={"gold"} /> {doctor.rate}

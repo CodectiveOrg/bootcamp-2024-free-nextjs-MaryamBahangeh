@@ -5,11 +5,11 @@ import Card from "@/components/card/Card";
 import { FiltersType } from "@/types/filters-type";
 import { SelectOptionType } from "@/types/select-option-type";
 
-import styles from "./FilterItems.module.css";
+import styles from "./ItemsFilter.module.css";
 
 export enum FILTER_VARIANT {
-  list = "list",
-  radio = "radio",
+  LIST = "list",
+  RADIO = "radio",
 }
 
 type Props = {
@@ -19,7 +19,7 @@ type Props = {
   fieldName: keyof FiltersType;
 };
 
-function FilterItems({ filterVariant, title, options, fieldName }: Props) {
+function ItemsFilter({ filterVariant, title, options, fieldName }: Props) {
   const { filters, dispatchFilters } = useContext(FiltersContext);
 
   const filter = (value: string, filterType: keyof FiltersType): void => {
@@ -31,12 +31,12 @@ function FilterItems({ filterVariant, title, options, fieldName }: Props) {
   };
 
   return (
-    <div className={styles["filter-items"]}>
+    <div className={styles["items-filters"]}>
       <Card title={title} className={styles.items}>
         <ul>
           {options.map(
             (option) =>
-              (filterVariant === FILTER_VARIANT.list && (
+              (filterVariant === FILTER_VARIANT.LIST && (
                 <li
                   key={option.label}
                   value={option.label}
@@ -50,7 +50,7 @@ function FilterItems({ filterVariant, title, options, fieldName }: Props) {
                   {option.label}
                 </li>
               )) ||
-              (filterVariant === FILTER_VARIANT.radio && (
+              (filterVariant === FILTER_VARIANT.RADIO && (
                 <div key={option.value} className={styles["radio-list"]}>
                   <input
                     type="radio"
@@ -70,4 +70,4 @@ function FilterItems({ filterVariant, title, options, fieldName }: Props) {
   );
 }
 
-export default FilterItems;
+export default ItemsFilter;

@@ -6,7 +6,7 @@ import DoctorsProvider from "@/app/search/providers/DoctorsProvider";
 import GlobalSearchBox from "@/components/global-search-box/GlobalSearchBox";
 import Doctors from "@/components/doctors/doctors";
 
-import Filter from "@/app/search/components/Filter";
+import Filters from "@/app/search/components/Filters";
 import AppointmentFilter from "@/app/search/components/appointment-filter/AppointmentFilter";
 import Sort from "@/app/search/components/sort/Sort";
 import Stats from "@/app/search/components/stats/Stats";
@@ -36,7 +36,7 @@ export default async function Page({
 
           <div className={styles.container}>
             <div className={styles.filters}>
-              <Filter />
+              <Filters />
             </div>
 
             <div className={styles.toolbar}>

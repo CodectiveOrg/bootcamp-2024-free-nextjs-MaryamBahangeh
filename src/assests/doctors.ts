@@ -13,7 +13,7 @@ import brody from "@/assests/doctors-images/brody.webp";
 
 import { SERVICE_TYPE } from "@/options/service-types-options";
 import { APPOINTMENT_TIMES } from "@/options/appointment-time-options";
-import { SPECIALITY_DEGREE } from "@/options/degree-options";
+import { DEGREE } from "@/options/degree-options";
 
 export const doctors: DoctorModel[] = [
   {
@@ -31,8 +31,8 @@ export const doctors: DoctorModel[] = [
     specialityName: "Gynecologist",
     description:
       "Diagnosing and treating conditions of the female reproductive system",
-    specialtyDegreeName: SPECIALITY_DEGREE[0].label,
-    specialtyDegreeId: SPECIALITY_DEGREE[0].value,
+    degreeName: DEGREE[0].label,
+    degreeId: DEGREE[0].value,
   },
   {
     id: "88820f0d-b576-9ffc-a81b4b1b4e7",
@@ -48,8 +48,8 @@ export const doctors: DoctorModel[] = [
     specialityId: "2",
     specialityName: "Cardiologist",
     description: "Expert in the care of your heart and blood vessels",
-    specialtyDegreeName: SPECIALITY_DEGREE[1].label,
-    specialtyDegreeId: SPECIALITY_DEGREE[1].value,
+    degreeName: DEGREE[1].label,
+    degreeId: DEGREE[1].value,
   },
   {
     id: "88820f0d-b576-335-9ffc-a81b1b4e7",
@@ -65,8 +65,8 @@ export const doctors: DoctorModel[] = [
     specialityId: "3",
     specialityName: "Neonatologist",
     description: "caring for newborn and premature babies",
-    specialtyDegreeName: SPECIALITY_DEGREE[0].label,
-    specialtyDegreeId: SPECIALITY_DEGREE[0].value,
+    degreeName: DEGREE[0].label,
+    degreeId: DEGREE[0].value,
   },
   {
     id: "8882000f0d-b576-335-9ffc-a81b4b1b4e7",
@@ -83,8 +83,8 @@ export const doctors: DoctorModel[] = [
     specialityName: "Pulmonologist ",
     description:
       "Diagnosing and treating diseases of the respiratory system, including airways, alveoli and blood vessels",
-    specialtyDegreeName: SPECIALITY_DEGREE[3].label,
-    specialtyDegreeId: SPECIALITY_DEGREE[3].value,
+    degreeName: DEGREE[3].label,
+    degreeId: DEGREE[3].value,
   },
   {
     id: "97420f0d-b576-4f65-fc-a81b4b1b4e77",
@@ -101,8 +101,8 @@ export const doctors: DoctorModel[] = [
     specialityName: "Gastroenterologist",
     description:
       "Diagnosing and treating conditions of the female reproductive system",
-    specialtyDegreeName: SPECIALITY_DEGREE[0].label,
-    specialtyDegreeId: SPECIALITY_DEGREE[0].value,
+    degreeName: DEGREE[0].label,
+    degreeId: DEGREE[0].value,
   },
   {
     id: "88820f0d-76-9ffc-a81b4b1b4e7",
@@ -115,8 +115,8 @@ export const doctors: DoctorModel[] = [
     address: "Netherlands",
     firstAvailableAppointmentValue: APPOINTMENT_TIMES[3].value,
     firstAvailableAppointmentLabel: APPOINTMENT_TIMES[3].label,
-    specialtyDegreeName: SPECIALITY_DEGREE[1].label,
-    specialtyDegreeId: SPECIALITY_DEGREE[1].value,
+    degreeName: DEGREE[1].label,
+    degreeId: DEGREE[1].value,
 
     specialityId: "6",
     specialityName: "Cosmetologist",
@@ -136,8 +136,8 @@ export const doctors: DoctorModel[] = [
     specialityId: "6",
     specialityName: "Cosmetologist",
     description: "caring for newborn and premature babies",
-    specialtyDegreeName: SPECIALITY_DEGREE[2].label,
-    specialtyDegreeId: SPECIALITY_DEGREE[2].value,
+    degreeName: DEGREE[2].label,
+    degreeId: DEGREE[2].value,
   },
   {
     id: "8882000f-b576-335-9ffc-a81b4b1b4e7",
@@ -154,8 +154,8 @@ export const doctors: DoctorModel[] = [
     specialityName: "Gynecologist ",
     description:
       "Diagnosing and treating diseases of the respiratory system, including airways, alveoli and blood vessels",
-    specialtyDegreeName: SPECIALITY_DEGREE[1].label,
-    specialtyDegreeId: SPECIALITY_DEGREE[1].value,
+    degreeName: DEGREE[1].label,
+    degreeId: DEGREE[1].value,
   },
 
   {
@@ -173,8 +173,8 @@ export const doctors: DoctorModel[] = [
     specialityName: "Gynecologist",
     description:
       "Diagnosing and treating conditions of the female reproductive system",
-    specialtyDegreeName: SPECIALITY_DEGREE[2].label,
-    specialtyDegreeId: SPECIALITY_DEGREE[2].value,
+    degreeName: DEGREE[2].label,
+    degreeId: DEGREE[2].value,
   },
 
   {
@@ -191,8 +191,8 @@ export const doctors: DoctorModel[] = [
     specialityId: "2",
     specialityName: "Cardiologist",
     description: "Expert in the care of your heart and blood vessels",
-    specialtyDegreeName: SPECIALITY_DEGREE[0].label,
-    specialtyDegreeId: SPECIALITY_DEGREE[0].value,
+    degreeName: DEGREE[0].label,
+    degreeId: DEGREE[0].value,
   },
   {
     id: "88820d-b576-335-9ffc-a81b1b4e7",
@@ -208,8 +208,8 @@ export const doctors: DoctorModel[] = [
     specialityId: "3",
     specialityName: "Neonatologist",
     description: "caring for newborn and premature babies",
-    specialtyDegreeName: SPECIALITY_DEGREE[0].label,
-    specialtyDegreeId: SPECIALITY_DEGREE[0].value,
+    degreeName: DEGREE[0].label,
+    degreeId: DEGREE[0].value,
   },
   {
     id: "8800f0d-b576-335-9ffc-a81b4b1b4e7",
@@ -226,8 +226,8 @@ export const doctors: DoctorModel[] = [
     specialityName: "Pulmonologist ",
     description:
       "Diagnosing and treating diseases of the respiratory system, including airways, alveoli and blood vessels",
-    specialtyDegreeName: SPECIALITY_DEGREE[3].label,
-    specialtyDegreeId: SPECIALITY_DEGREE[3].value,
+    degreeName: DEGREE[3].label,
+    degreeId: DEGREE[3].value,
   },
 
   {
@@ -244,8 +244,8 @@ export const doctors: DoctorModel[] = [
     specialityId: "6",
     specialityName: "Cosmetologist",
     description: "caring for newborn and premature babies",
-    specialtyDegreeName: SPECIALITY_DEGREE[2].label,
-    specialtyDegreeId: SPECIALITY_DEGREE[2].value,
+    degreeName: DEGREE[2].label,
+    degreeId: DEGREE[2].value,
   },
   {
     id: "8882000f-b576-335-9ffc-a84b1b4e7",
@@ -262,8 +262,8 @@ export const doctors: DoctorModel[] = [
     specialityName: "Gynecologist ",
     description:
       "Diagnosing and treating diseases of the respiratory system, including airways, alveoli and blood vessels",
-    specialtyDegreeName: SPECIALITY_DEGREE[2].label,
-    specialtyDegreeId: SPECIALITY_DEGREE[2].value,
+    degreeName: DEGREE[2].label,
+    degreeId: DEGREE[2].value,
   },
 
   {
@@ -281,8 +281,8 @@ export const doctors: DoctorModel[] = [
     specialityName: "Gynecologist",
     description:
       "Diagnosing and treating conditions of the female reproductive system",
-    specialtyDegreeName: SPECIALITY_DEGREE[1].label,
-    specialtyDegreeId: SPECIALITY_DEGREE[1].value,
+    degreeName: DEGREE[1].label,
+    degreeId: DEGREE[1].value,
   },
 
   {
@@ -299,7 +299,7 @@ export const doctors: DoctorModel[] = [
     specialityId: "2",
     specialityName: "Cardiologist",
     description: "Expert in the care of your heart and blood vessels",
-    specialtyDegreeName: SPECIALITY_DEGREE[0].label,
-    specialtyDegreeId: SPECIALITY_DEGREE[0].value,
+    degreeName: DEGREE[0].label,
+    degreeId: DEGREE[0].value,
   },
 ];
