@@ -31,42 +31,40 @@ function ItemsFilter({ filterVariant, title, options, fieldName }: Props) {
   };
 
   return (
-    <div className={styles["items-filters"]}>
-      <Card title={title} className={styles.items}>
-        <ul>
-          {options.map(
-            (option) =>
-              (filterVariant === FILTER_VARIANT.LIST && (
-                <li
-                  key={option.label}
-                  value={option.label}
-                  className={
-                    filters[fieldName] === option.label ? styles.selected : ""
-                  }
-                  onClick={() => {
-                    filter(option.label, fieldName);
-                  }}
-                >
-                  {option.label}
-                </li>
-              )) ||
-              (filterVariant === FILTER_VARIANT.RADIO && (
-                <div key={option.value} className={styles["radio-list"]}>
-                  <input
-                    type="radio"
-                    id={option.label}
-                    name={option.label}
-                    value={option.value}
-                    checked={filters[fieldName] === option.label}
-                    onChange={() => filter(option.label, fieldName)}
-                  />
-                  <label htmlFor={option.label}>{option.label}</label>
-                </div>
-              )),
-          )}
-        </ul>
-      </Card>
-    </div>
+    <Card title={title} className={styles["items-filters"]}>
+      <ul>
+        {options.map(
+          (option) =>
+            (filterVariant === FILTER_VARIANT.LIST && (
+              <li
+                key={option.label}
+                value={option.label}
+                className={
+                  filters[fieldName] === option.label ? styles.selected : ""
+                }
+                onClick={() => {
+                  filter(option.label, fieldName);
+                }}
+              >
+                {option.label}
+              </li>
+            )) ||
+            (filterVariant === FILTER_VARIANT.RADIO && (
+              <div key={option.value} className={styles["radio-list"]}>
+                <input
+                  type="radio"
+                  id={option.label}
+                  name={option.label}
+                  value={option.value}
+                  checked={filters[fieldName] === option.label}
+                  onChange={() => filter(option.label, fieldName)}
+                />
+                <label htmlFor={option.label}>{option.label}</label>
+              </div>
+            )),
+        )}
+      </ul>
+    </Card>
   );
 }
 

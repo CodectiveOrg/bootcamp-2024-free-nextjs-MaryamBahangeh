@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext } from "react";
+import React, { useContext, useMemo } from "react";
 
 import SelectComponent from "@/components/select/SelectComponent";
 import { APPOINTMENT_TIMES } from "@/options/appointment-time-options";
@@ -13,41 +13,38 @@ import styles from "./AppointmentFilter.module.css";
 function AppointmentFilter() {
   const { filters, dispatchFilters } = useContext(FiltersContext);
 
-  const filter = (value: string, filterType: keyof FiltersType): void => {
-    dispatchFilters({
-      type: "filtered",
-      key: filterType,
-      value: value,
-    });
-  };
-
-  const selectedOption = (): SelectOptionType => {
-    if (filters["firstAvailableAppointmentLabel"]) {
+  const selectedOption = useMemo(() => {
+    if (filters["appointmentLabel"]) {
       return APPOINTMENT_TIMES.find(
-        (option) => option.label === filters["firstAvailableAppointmentLabel"],
+        (option) => option.label === filters["appointmentLabel"],
       )!;
     }
     return APPOINTMENT_TIMES[0];
-  };
+  }, [filters]);
 
   const changeHandler = (option: SelectOptionType): void => {
     if (option === APPOINTMENT_TIMES[0]) {
       dispatchFilters({
         type: "deletedFilter",
-        key: "firstAvailableAppointmentLabel",
+        key: "appointmentLabel",
       });
       return;
     }
-    filter(option.label, "firstAvailableAppointmentLabel");
+
+    dispatchFilters({
+      type: "filtered",
+      key: "appointmentLabel",
+      value: option.label,
+    });
   };
 
   return (
     <div className={styles["appointment-filter"]}>
       <SelectComponent
         floating
-        title="First available appointment"
+        title="First Available Appointment"
         options={APPOINTMENT_TIMES}
-        selectedOption={selectedOption()}
+        selectedOption={selectedOption}
         onSelectedOptionChange={changeHandler}
       />
     </div>

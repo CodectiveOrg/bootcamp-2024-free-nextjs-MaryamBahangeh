@@ -95,9 +95,7 @@ function DoctorsProvider({ children }: Props) {
 
     if (sortBy === "appointment") {
       return filteredDoctors().sort((a, b) =>
-        a.firstAvailableAppointmentValue.localeCompare(
-          b.firstAvailableAppointmentValue,
-        ),
+        a.appointmentValue.localeCompare(b.appointmentValue),
       );
     }
 
