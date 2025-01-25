@@ -31,7 +31,7 @@ function ItemsFilter({ filterVariant, title, options, fieldName }: Props) {
   };
 
   return (
-    <Card title={title} className={styles["items-filters"]}>
+    <Card title={title} className={styles["items-filter"]}>
       <ul>
         {options.map(
           (option) =>
@@ -42,9 +42,13 @@ function ItemsFilter({ filterVariant, title, options, fieldName }: Props) {
                 className={
                   filters[fieldName] === option.label ? styles.selected : ""
                 }
-                onClick={() => {
-                  filter(option.label, fieldName);
-                }}
+                onClick={() =>
+                  dispatchFilters({
+                    type: "filtered",
+                    key: fieldName,
+                    value: option.label,
+                  })
+                }
               >
                 {option.label}
               </li>
@@ -57,7 +61,13 @@ function ItemsFilter({ filterVariant, title, options, fieldName }: Props) {
                   name={option.label}
                   value={option.value}
                   checked={filters[fieldName] === option.label}
-                  onChange={() => filter(option.label, fieldName)}
+                  onChange={() =>
+                    dispatchFilters({
+                      type: "filtered",
+                      key: fieldName,
+                      value: option.label,
+                    })
+                  }
                 />
                 <label htmlFor={option.label}>{option.label}</label>
               </div>

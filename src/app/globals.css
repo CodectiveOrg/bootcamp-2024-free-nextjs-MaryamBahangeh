@@ -2,7 +2,7 @@
   --color-gray-99: hsl(200deg 10% 99%);
   --color-gray-98: hsl(0deg 0% 98%);
   --color-gray-97: hsl(200deg 10% 97%);
-  --color-gray-93: hsl(200deg 10% 93%);
+  --color-gray-93: hsl(300, 72%, 90%);
   --color-gray-90: hsl(0deg 0% 90%);
   --color-gray-80: hsl(0deg 0% 80%);
   --color-gray-70: hsl(0deg 0% 70%);
@@ -21,7 +21,7 @@
   --color-default-background: var(--color-gray-10);
   --color-default-foreground: var(--color-gray-98);
 
-  --color-surface-300: hsl(283, 68%, 80%);
+  --color-surface-300: hsl(300, 40%, 92%);
   --color-surface-400: var(--color-gray-97);
   --color-surface-700: var(--color-gray-99);
 
