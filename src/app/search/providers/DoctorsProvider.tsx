@@ -37,7 +37,7 @@ function DoctorsProvider({ children }: Props) {
   const { filters } = useContext(FiltersContext);
   const [sortBy, setSortBy] = useState<SelectOptionType>(SORT_OPTIONS[0]);
 
-  const isActiveDoctor = useCallback(
+  const isVisible = useCallback(
     (doctor: DoctorModel): boolean => {
       const keyValues = Object.keys(filters) as (keyof FiltersType)[];
 
@@ -57,25 +57,28 @@ function DoctorsProvider({ children }: Props) {
   );
 
   const sortedDoctors = useMemo((): DoctorModel[] => {
-    const filteredDoctors = (): DoctorModel[] =>
-      doctors.filter((doctor: DoctorModel) => isActiveDoctor(doctor));
+    const filteredDoctors = doctors.filter(isVisible);
 
-    if (sortBy.value === "rating") {
-      return filteredDoctors().sort((a, b) => b.rate - a.rate);
+    switch (sortBy.value) {
+      case "rating": {
+        return filteredDoctors.sort((a, b) => b.rate - a.rate);
+      }
+
+      case "appointment": {
+        return filteredDoctors.sort((a, b) =>
+          a.appointmentValue.localeCompare(b.appointmentValue),
+        );
+      }
+
+      case "popularity": {
+        return filteredDoctors.sort((a, b) => b.totalVotes - a.totalVotes);
+      }
+
+      default: {
+        return filteredDoctors;
+      }
     }
-
-    if (sortBy.value === "appointment") {
-      return filteredDoctors().sort((a, b) =>
-        a.appointmentValue.localeCompare(b.appointmentValue),
-      );
-    }
-
-    if (sortBy.value === "popularity") {
-      return filteredDoctors().sort((a, b) => b.totalVotes - a.totalVotes);
-    }
-
-    return filteredDoctors();
-  }, [sortBy, isActiveDoctor]);
+  }, [sortBy, isVisible]);
 
   return (
     <DoctorsContext.Provider value={{ sortedDoctors, sortBy, setSortBy }}>
