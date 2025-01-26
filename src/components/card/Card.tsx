@@ -10,7 +10,7 @@ type Props = PropsWithChildren & {
 function Card({ title, children, className }: Props) {
   return (
     <div className={clsx(styles.card, className)}>
-      {title && <div className={styles.title}>{title}</div>}
+      {title && <div className={styles.title}>{title}:</div>}
       {children}
     </div>
   );

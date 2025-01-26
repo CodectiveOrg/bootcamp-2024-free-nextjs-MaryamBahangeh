@@ -1,5 +1,8 @@
 .selected-filters {
-  .title {
+  display: grid;
+  gap: 0.5rem;
+
+  .header {
     display: flex;
     justify-content: space-between;
     font-weight: 700;

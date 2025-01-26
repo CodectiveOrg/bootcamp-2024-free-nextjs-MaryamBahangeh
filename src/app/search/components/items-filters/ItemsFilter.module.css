@@ -3,10 +3,19 @@
   overflow: auto;
   scrollbar-width: thin;
 
-  li {
+  ul {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  button {
     padding: 0.5rem;
-    border-radius: 0.5rem;
     cursor: pointer;
+    border-radius: 0.5rem;
+    color: var(--color-gray-12);
+    background: transparent;
+    border: none;
+    text-align: start;
 
     &:hover {
       background-color: var(--color-surface-300);

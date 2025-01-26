@@ -28,7 +28,7 @@ function SelectedFilters() {
   return (
     <Card>
       <div className={styles["selected-filters"]}>
-        <div className={styles.title}>
+        <div className={styles.header}>
           <div>Filters:</div>
           {keyValues.length > 0 && (
             <button

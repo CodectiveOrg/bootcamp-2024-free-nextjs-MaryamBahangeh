@@ -22,21 +22,13 @@ type Props = {
 function ItemsFilter({ filterVariant, title, options, fieldName }: Props) {
   const { filters, dispatchFilters } = useContext(FiltersContext);
 
-  const filter = (value: string, filterType: keyof FiltersType): void => {
-    dispatchFilters({
-      type: "filtered",
-      key: filterType,
-      value: value,
-    });
-  };
-
   return (
     <Card title={title} className={styles["items-filter"]}>
       <ul>
         {options.map(
           (option) =>
             (filterVariant === FILTER_VARIANT.LIST && (
-              <li
+              <button
                 key={option.label}
                 value={option.label}
                 className={
@@ -51,7 +43,7 @@ function ItemsFilter({ filterVariant, title, options, fieldName }: Props) {
                 }
               >
                 {option.label}
-              </li>
+              </button>
             )) ||
             (filterVariant === FILTER_VARIANT.RADIO && (
               <div key={option.value} className={styles["radio-list"]}>

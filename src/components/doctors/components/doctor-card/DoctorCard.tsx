@@ -33,7 +33,7 @@ function DoctorCard({ doctor }: Props) {
                 {doctor.specialityName} - {doctor.degreeName}
               </div>
               <div className={styles.rate}>
-                <StarBold color={"gold"} /> {doctor.rate}
+                <StarBold className={styles.star} /> {doctor.rate}
                 <span> {" (" + doctor.totalVotes + " comments)"}</span>
               </div>
             </div>

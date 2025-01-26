@@ -36,6 +36,10 @@
           gap: 0.2rem;
           align-items: center;
 
+          .star {
+            color: var(--color-gold);
+          }
+
           > span {
             margin-inline-start: 0.3rem;
             color: var(--color-blue);

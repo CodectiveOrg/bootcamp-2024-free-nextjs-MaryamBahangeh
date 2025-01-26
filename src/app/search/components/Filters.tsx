@@ -26,20 +26,20 @@ function Filters() {
 
       <ItemsFilter
         filterVariant={FILTER_VARIANT.LIST}
-        title="Speciality:"
+        title="Speciality"
         options={SPECIALITY_OPTIONS}
         fieldName="specialityName"
       />
       <ItemsFilter
         filterVariant={FILTER_VARIANT.LIST}
-        title="Academic Degree:"
+        title="Academic Degree"
         options={DEGREE}
         fieldName="degreeName"
       />
 
       <ItemsFilter
         filterVariant={FILTER_VARIANT.RADIO}
-        title="Service type:"
+        title="Service type"
         options={SERVICE_TYPE}
         fieldName="serviceTypeName"
       />
