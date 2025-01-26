@@ -18,6 +18,7 @@ import { doctors } from "@/assests/doctors";
 import { FiltersType } from "@/types/filters-type";
 import { SORT_OPTIONS } from "@/options/sort-options";
 import { SelectOptionType } from "@/types/select-option-type";
+import filters from "@/app/search/components/Filters";
 
 type ContextType = {
   sortedDoctors: DoctorModel[];
@@ -37,47 +38,17 @@ function DoctorsProvider({ children }: Props) {
   const { filters } = useContext(FiltersContext);
   const [sortBy, setSortBy] = useState<SelectOptionType>(SORT_OPTIONS[0]);
 
-  const doesInclude = useCallback(
-    (filterName: keyof FiltersType, doctor: DoctorModel): boolean => {
-      return doctor[filterName] === filters[filterName];
-    },
-    [filters],
-  );
-
-  const doesSomeInclude = useCallback(
-    (filterName: keyof FiltersType, doctor: DoctorModel): boolean => {
-      if (filters[filterName] === "") {
-        return true;
-      }
-
-      return (
-        doctor.name
-          .toLowerCase()
-          .includes((filters[filterName] as string).toLowerCase()) ||
-        doctor.address
-          .toLowerCase()
-          .includes((filters[filterName] as string).toLowerCase()) ||
-        doctor.specialityName
-          .toLowerCase()
-          .includes((filters[filterName] as string).toLowerCase())
-      );
-    },
-    [filters],
-  );
-
   const isActiveDoctor = useCallback(
     (doctor: DoctorModel): boolean => {
-      const keyValues: (keyof FiltersType)[] = Object.keys(
-        filters,
-      ) as (keyof FiltersType)[];
+      const keyValues = Object.keys(filters) as (keyof FiltersType)[];
 
       const result: boolean[] = [];
 
       keyValues.map((key) => {
         if (key === "name") {
-          result.push(doesSomeInclude(key, doctor));
+          result.push(doesSomeInclude(filters[key] as string, doctor));
         } else {
-          result.push(doesInclude(key, doctor));
+          result.push(doesInclude(filters[key] as string, key, doctor));
         }
       });
 
@@ -113,5 +84,25 @@ function DoctorsProvider({ children }: Props) {
     </DoctorsContext.Provider>
   );
 }
+
+const doesSomeInclude = (filterValue: string, doctor: DoctorModel): boolean => {
+  if (filterValue === "") {
+    return true;
+  }
+
+  return (
+    doctor.name.toLowerCase().includes(filterValue.toLowerCase()) ||
+    doctor.address.toLowerCase().includes(filterValue.toLowerCase()) ||
+    doctor.specialityName.toLowerCase().includes(filterValue.toLowerCase())
+  );
+};
+
+const doesInclude = (
+  filterValue: string,
+  filterKey: keyof FiltersType,
+  doctor: DoctorModel,
+): boolean => {
+  return doctor[filterKey] === filterValue;
+};
 
 export default DoctorsProvider;
