@@ -39,11 +39,11 @@ function DoctorsProvider({ children }: Props) {
 
   const isVisible = useCallback(
     (doctor: DoctorModel): boolean => {
-      const keyValues = Object.keys(filters) as (keyof FiltersType)[];
+      const filterKeys = Object.keys(filters) as (keyof FiltersType)[];
 
       const result: boolean[] = [];
 
-      keyValues.map((key) => {
+      filterKeys.map((key) => {
         if (key === "name") {
           result.push(doesSomeInclude(filters[key] as string, doctor));
         } else {

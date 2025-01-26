@@ -5,7 +5,6 @@ import React, { useContext, useMemo } from "react";
 import SelectComponent from "@/components/select/SelectComponent";
 import { APPOINTMENT_TIMES } from "@/options/appointment-time-options";
 import { SelectOptionType } from "@/types/select-option-type";
-import { FiltersType } from "@/types/filters-type";
 import { FiltersContext } from "@/app/search/providers/FiltersProvider";
 
 import styles from "./AppointmentFilter.module.css";
