@@ -15,8 +15,12 @@
       cursor: pointer;
       color: var(--color-danger);
 
+      padding-inline: 1rem;
+      padding-block: 0.25rem;
+
+      border-radius: var(--border-radius);
       &:hover {
-        text-decoration: underline;
+        background-color: var(--color-surface-300);
       }
     }
   }
@@ -30,21 +34,20 @@
       border-radius: var(--border-radius);
       border: 0.1rem solid var(--color-primary);
 
+      display: flex;
+      gap: 0.25rem;
+
       color: var(--color-gray-30);
       padding: 0.2rem 0.5rem;
 
-      display: flex;
-      gap: 0.5rem;
-      justify-content: center;
-
       button {
+        display: flex;
+        align-items: center;
+
         border: none;
         background-color: transparent;
         appearance: none;
-
-        > * {
-          color: var(--color-danger);
-        }
+        color: var(--color-danger);
 
         &:hover {
           cursor: pointer;

@@ -17,16 +17,17 @@ import { DoctorModel } from "@/models/doctor";
 import { doctors } from "@/assests/doctors";
 import { FiltersType } from "@/types/filters-type";
 import { SORT_OPTIONS } from "@/options/sort-options";
+import { SelectOptionType } from "@/types/select-option-type";
 
 type ContextType = {
   sortedDoctors: DoctorModel[];
-  sortBy: string;
-  setSortBy: Dispatch<SetStateAction<string>>;
+  sortBy: SelectOptionType;
+  setSortBy: Dispatch<SetStateAction<SelectOptionType>>;
 };
 
 export const DoctorsContext = createContext<ContextType>({
   sortedDoctors: [],
-  sortBy: "",
+  sortBy: SORT_OPTIONS[0],
   setSortBy: () => {},
 });
 
@@ -34,7 +35,7 @@ type Props = PropsWithChildren;
 
 function DoctorsProvider({ children }: Props) {
   const { filters } = useContext(FiltersContext);
-  const [sortBy, setSortBy] = useState<string>(SORT_OPTIONS[0].value);
+  const [sortBy, setSortBy] = useState<SelectOptionType>(SORT_OPTIONS[0]);
 
   const doesInclude = useCallback(
     (filterName: keyof FiltersType, doctor: DoctorModel): boolean => {
@@ -89,17 +90,17 @@ function DoctorsProvider({ children }: Props) {
     const filteredDoctors = (): DoctorModel[] =>
       doctors.filter((doctor: DoctorModel) => isActiveDoctor(doctor));
 
-    if (sortBy === "rating") {
+    if (sortBy.value === "rating") {
       return filteredDoctors().sort((a, b) => b.rate - a.rate);
     }
 
-    if (sortBy === "appointment") {
+    if (sortBy.value === "appointment") {
       return filteredDoctors().sort((a, b) =>
         a.appointmentValue.localeCompare(b.appointmentValue),
       );
     }
 
-    if (sortBy === "popularity") {
+    if (sortBy.value === "popularity") {
       return filteredDoctors().sort((a, b) => b.totalVotes - a.totalVotes);
     }
 
