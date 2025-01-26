@@ -18,7 +18,6 @@ import { doctors } from "@/assests/doctors";
 import { FiltersType } from "@/types/filters-type";
 import { SORT_OPTIONS } from "@/options/sort-options";
 import { SelectOptionType } from "@/types/select-option-type";
-import filters from "@/app/search/components/Filters";
 
 type ContextType = {
   sortedDoctors: DoctorModel[];
@@ -54,7 +53,7 @@ function DoctorsProvider({ children }: Props) {
 
       return result.find((x) => !x) == undefined;
     },
-    [filters, doesInclude, doesSomeInclude],
+    [filters],
   );
 
   const sortedDoctors = useMemo((): DoctorModel[] => {
