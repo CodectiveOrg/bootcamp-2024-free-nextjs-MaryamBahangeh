@@ -23,9 +23,13 @@ function GlobalSearchBox() {
 
     if (pathname === "/search") {
       if (query) {
-        dispatchFilters({ type: "filtered", key: "name", value: query });
+        dispatchFilters({
+          type: "updated_filtered",
+          key: "name",
+          value: query,
+        });
       } else {
-        dispatchFilters({ type: "deletedFilter", key: "name" });
+        dispatchFilters({ type: "removed_filter", key: "name" });
       }
     } else {
       const href = query ? `/search/?name=${query}` : "/search";

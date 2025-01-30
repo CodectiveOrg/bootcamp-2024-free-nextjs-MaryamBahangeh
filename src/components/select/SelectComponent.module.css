@@ -15,15 +15,12 @@
   cursor: default;
 
   .title {
-    color: var(--color-gray-12);
     font-size: var(--fz-300);
     font-weight: 700;
   }
 
   .value {
     flex: 1 1 0;
-    color: var(--color-gray-30);
-    font-weight: 600;
   }
 
   .caret {
@@ -34,8 +31,7 @@
   }
 
   .options {
-    background-color: var(--color-gray-98);
-    color: var(--color-gray-12);
+    background-color: var(--color-surface-700);
     box-shadow: var(--shadow-400);
 
     position: absolute;
@@ -53,7 +49,7 @@
 
     .option {
       padding: 0.25rem 0.5rem;
-      font-weight: 600;
+
       cursor: pointer;
 
       &.highlighted {
@@ -83,8 +79,7 @@
   }
 
   &.floating {
-    background-color: var(--color-gray-98);
-
+    background-color: var(--color-surface-700);
     box-shadow: var(--shadow-400);
 
     &:not(&:focus, &.open) {

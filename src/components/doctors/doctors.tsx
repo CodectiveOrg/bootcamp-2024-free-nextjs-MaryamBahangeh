@@ -9,6 +9,7 @@ import styles from "./doctors.module.css";
 
 function Doctors() {
   const { sortedDoctors } = useContext(DoctorsContext);
+
   return (
     <div className={styles.doctors}>
       {sortedDoctors.map((doctor) => (

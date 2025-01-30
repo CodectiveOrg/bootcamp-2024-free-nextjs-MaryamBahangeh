@@ -28,7 +28,7 @@ function ItemsFilter({ title, options, fieldName }: Props) {
             }
             onClick={() =>
               dispatchFilters({
-                type: "filtered",
+                type: "updated_filtered",
                 key: fieldName,
                 value: option.label,
               })

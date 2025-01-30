@@ -15,17 +15,15 @@ function DoctorCard({ doctor }: Props) {
   return (
     <Card>
       <div className={styles["doctor-card"]}>
-        <div className={styles.left}>
+        <div className={styles.main}>
           <div className={styles["primary-info"]}>
-            <div className={styles["image-container"]}>
-              <Image
-                className={styles.image}
-                src={doctor.image}
-                alt="doctor image"
-                width={70}
-                height={70}
-              ></Image>
-            </div>
+            <Image
+              className={styles.image}
+              src={doctor.image}
+              alt="Doctor image"
+              width={70}
+              height={70}
+            />
 
             <div className={styles["doctor-info"]}>
               <div className={styles.name}>{doctor.name}</div>
@@ -46,14 +44,14 @@ function DoctorCard({ doctor }: Props) {
 
         <div className={styles.line}></div>
 
-        <div className={styles.right}>
+        <div className={styles.secondary}>
           <div>
-            Service type :
+            Service type:
             <span className={styles.data}>{doctor.serviceTypeName}</span>
           </div>
 
           <div>
-            First available appointment :
+            First available appointment:
             <span className={styles.data}>{doctor.appointmentLabel}</span>
           </div>
 
@@ -62,8 +60,8 @@ function DoctorCard({ doctor }: Props) {
             {doctor.address}
           </div>
 
-          <div className={styles.book}>
-            <button>Book an appointment</button>
+          <div>
+            <button>Book An Appointment</button>
           </div>
         </div>
       </div>

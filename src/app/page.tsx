@@ -13,7 +13,7 @@ export default function Home() {
       <GlobalSearchBox />
 
       <div className={styles.history}>
-        <div>Recent search</div>
+        <div>Your recent search</div>
         <ul>
           <li>Psychologist</li>
           <li>Pediatrician</li>

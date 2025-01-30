@@ -24,14 +24,14 @@ function AppointmentFilter() {
   const changeHandler = (option: SelectOptionType): void => {
     if (option === APPOINTMENT_TIMES[0]) {
       dispatchFilters({
-        type: "deletedFilter",
+        type: "removed_filter",
         key: "appointmentLabel",
       });
       return;
     }
 
     dispatchFilters({
-      type: "filtered",
+      type: "updated_filtered",
       key: "appointmentLabel",
       value: option.label,
     });

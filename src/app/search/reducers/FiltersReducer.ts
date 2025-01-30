@@ -2,16 +2,16 @@ import { FiltersType } from "@/types/filters-type";
 
 export type FiltersAction =
   | {
-      type: "filtered";
+      type: "updated_filtered";
       key: keyof FiltersType;
       value: string;
     }
   | {
-      type: "deletedFilter";
+      type: "removed_filter";
       key: keyof FiltersType;
     }
   | {
-      type: "deletedAllFilters";
+      type: "removed_all";
     };
 
 export const filtersReducer = (
@@ -19,17 +19,17 @@ export const filtersReducer = (
   action: FiltersAction,
 ): FiltersType => {
   switch (action.type) {
-    case "filtered": {
+    case "updated_filtered": {
       return { ...filters, [action.key]: action.value };
     }
 
-    case "deletedFilter": {
+    case "removed_filter": {
       const clonedFilters = { ...filters };
       delete clonedFilters[action.key];
       return clonedFilters;
     }
 
-    case "deletedAllFilters": {
+    case "removed_all": {
       return {};
     }
 

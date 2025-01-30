@@ -20,10 +20,11 @@
   }
 
   button {
+    background-color: transparent;
+    color: var(--color-primary);
+
     border: 0.1rem solid var(--color-primary);
     border-radius: var(--border-radius);
-
-    background-color: transparent;
 
     font-weight: 700;
 

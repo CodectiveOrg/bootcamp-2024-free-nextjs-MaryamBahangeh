@@ -23,9 +23,9 @@ function SelectedFilters() {
           {filterKeys.length > 0 && (
             <button
               className={styles["delete-all"]}
-              onClick={() => dispatchFilters({ type: "deletedAllFilters" })}
+              onClick={() => dispatchFilters({ type: "removed_all" })}
             >
-              Delete
+              Delete All
             </button>
           )}
         </div>
@@ -35,7 +35,7 @@ function SelectedFilters() {
             <div className={styles.filter} key={key}>
               {filters[key]}
               <button
-                onClick={() => dispatchFilters({ type: "deletedFilter", key })}
+                onClick={() => dispatchFilters({ type: "removed_filter", key })}
               >
                 <SolarTrashBinMinimalisticLinear />
               </button>

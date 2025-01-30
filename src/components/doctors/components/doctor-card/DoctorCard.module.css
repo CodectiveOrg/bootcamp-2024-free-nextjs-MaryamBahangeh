@@ -4,18 +4,17 @@
   gap: 1rem;
   padding: 0.5rem;
 
-  .left {
+  .main {
     display: grid;
     gap: 1rem;
+
     .primary-info {
       display: flex;
       gap: 1rem;
 
-      .image-container {
-        .image {
-          border-radius: 999rem;
-          border: 0.1rem solid var(--color-blue);
-        }
+      .image {
+        border-radius: 999rem;
+        border: 0.1rem solid var(--color-primary-darker);
       }
 
       .doctor-info {
@@ -37,12 +36,7 @@
           align-items: center;
 
           .star {
-            color: var(--color-gold);
-          }
-
-          > span {
-            margin-inline-start: 0.3rem;
-            color: var(--color-blue);
+            color: var(--color-star);
           }
         }
       }
@@ -57,7 +51,8 @@
   .line {
     border: 1px solid var(--color-gray-80);
   }
-  .right {
+
+  .secondary {
     display: grid;
     gap: 1rem;
 
@@ -65,31 +60,27 @@
       display: flex;
       gap: 0.25rem;
       align-items: center;
-      color: var(--color-gray-50);
     }
 
-    .book {
-      justify-self: center;
+    button {
+      margin-left: auto;
+      border: 0.1rem solid var(--color-primary);
+      border-radius: var(--border-radius);
 
-      button {
-        border: 0.1rem solid var(--color-primary);
-        border-radius: var(--border-radius);
+      inline-size: 15rem;
+      min-inline-size: min(15rem, 100%);
 
-        inline-size: 15rem;
-        min-inline-size: min(15rem, 100%);
+      background-color: var(--color-primary);
+      color: var(--color-primary-opposite);
 
-        background-color: var(--color-primary);
-        color: var(--color-primary-opposite);
+      font-weight: 700;
 
-        font-weight: 700;
+      padding: 0.5rem 1rem;
+      margin-inline-start: auto;
 
-        padding: 0.5rem 1rem;
-        margin-inline-start: auto;
-
-        &:hover {
-          background-color: var(--color-primary-lighter);
-          cursor: pointer;
-        }
+      &:hover {
+        background-color: var(--color-primary-lighter);
+        cursor: pointer;
       }
     }
   }
