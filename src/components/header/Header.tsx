@@ -7,10 +7,10 @@ import clsx from "clsx";
 import styles from "./Header.module.css";
 
 const pages = [
-  { href: "/", title: "home" },
-  { href: "/search", title: "search" },
-  { href: "/about", title: "about" },
-  { href: "/myPanel", title: "my panel" },
+  { href: "/", title: "Home" },
+  { href: "/search", title: "Search" },
+  { href: "/about", title: "About" },
+  { href: "/myPanel", title: "My Panel" },
 ];
 
 function Header() {

@@ -11,7 +11,7 @@ function Stats() {
 
   return (
     <div className={styles.stats}>
-      Result: {sortedDoctors.length.toLocaleString()}
+      Search Result: {sortedDoctors.length.toLocaleString()}
     </div>
   );
 }
