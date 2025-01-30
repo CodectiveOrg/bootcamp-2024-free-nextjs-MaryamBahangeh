@@ -66,7 +66,7 @@ function DoctorsProvider({ children }: Props) {
 
       case "appointment": {
         return filteredDoctors.sort((a, b) =>
-          a.appointmentValue.localeCompare(b.appointmentValue),
+          a.appointment.value.localeCompare(b.appointment.value),
         );
       }
 
@@ -95,7 +95,7 @@ const doesSomeInclude = (filterValue: string, doctor: DoctorModel): boolean => {
   return (
     doctor.name.toLowerCase().includes(filterValue.toLowerCase()) ||
     doctor.address.toLowerCase().includes(filterValue.toLowerCase()) ||
-    doctor.specialityName.toLowerCase().includes(filterValue.toLowerCase())
+    doctor.speciality.label.toLowerCase().includes(filterValue.toLowerCase())
   );
 };
 
@@ -104,7 +104,9 @@ const doesInclude = (
   filterKey: keyof FiltersType,
   doctor: DoctorModel,
 ): boolean => {
-  return doctor[filterKey] === filterValue;
+  console.log("filterKey= " + filterKey);
+  console.log("filterValue= " + filterValue);
+  return (doctor[filterKey] as SelectOptionType).value === filterValue;
 };
 
 export default DoctorsProvider;

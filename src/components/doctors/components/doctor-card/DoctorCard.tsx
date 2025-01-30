@@ -28,7 +28,7 @@ function DoctorCard({ doctor }: Props) {
             <div className={styles["doctor-info"]}>
               <div className={styles.name}>{doctor.name}</div>
               <div className={styles.description}>
-                {doctor.specialityName} - {doctor.degreeName}
+                {doctor.speciality.label} - {doctor.degree.label}
               </div>
               <div className={styles.rate}>
                 <StarBold className={styles.star} /> {doctor.rate}
@@ -52,7 +52,7 @@ function DoctorCard({ doctor }: Props) {
 
           <div>
             First available appointment:
-            <span className={styles.data}>{doctor.appointmentLabel}</span>
+            <span className={styles.data}>{doctor.appointment.label}</span>
           </div>
 
           <div className={styles.address}>

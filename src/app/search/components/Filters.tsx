@@ -25,18 +25,18 @@ function Filters() {
       <ItemsFilter
         title="Speciality"
         options={SPECIALITY_OPTIONS}
-        fieldName="specialityName"
+        fieldName="speciality"
       />
       <ItemsFilter
         title="Academic Degree"
         options={DEGREE}
-        fieldName="degreeName"
+        fieldName="degree"
       />
 
       <ItemsFilter
         title="Service type"
         options={SERVICE_TYPE}
-        fieldName="serviceTypeName"
+        fieldName="serviceType"
       />
     </div>
   );

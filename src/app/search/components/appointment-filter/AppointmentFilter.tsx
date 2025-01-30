@@ -13,9 +13,9 @@ function AppointmentFilter() {
   const { filters, dispatchFilters } = useContext(FiltersContext);
 
   const selectedOption = useMemo(() => {
-    if (filters["appointmentLabel"]) {
+    if (filters["appointment"]) {
       return APPOINTMENT_TIMES.find(
-        (option) => option.label === filters["appointmentLabel"],
+        (option) => option.value === filters["appointment"],
       )!;
     }
     return APPOINTMENT_TIMES[0];
@@ -25,15 +25,15 @@ function AppointmentFilter() {
     if (option === APPOINTMENT_TIMES[0]) {
       dispatchFilters({
         type: "removed_filter",
-        key: "appointmentLabel",
+        key: "appointment",
       });
       return;
     }
 
     dispatchFilters({
       type: "updated_filtered",
-      key: "appointmentLabel",
-      value: option.label,
+      key: "appointment",
+      value: option.value,
     });
   };
 

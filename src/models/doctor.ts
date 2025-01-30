@@ -1,3 +1,5 @@
+import { SelectOptionType } from "@/types/select-option-type";
+
 export type DoctorModel = {
   id: string;
   name: string;
@@ -7,11 +9,8 @@ export type DoctorModel = {
   rate: number;
   totalVotes: number;
   address: string;
-  appointmentValue: string;
-  appointmentLabel: string;
-  specialityId: string;
-  specialityName: string;
+  appointment: SelectOptionType;
+  speciality: SelectOptionType;
+  degree: SelectOptionType;
   description: string;
-  degreeId: string;
-  degreeName: string;
 };

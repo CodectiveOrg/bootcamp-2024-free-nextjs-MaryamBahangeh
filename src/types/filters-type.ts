@@ -1,7 +1,8 @@
 export type FiltersType = {
-  specialityName?: string;
-  serviceTypeName?: string;
+  speciality?: string;
+  serviceType?: string;
   name?: string;
-  appointmentLabel?: string;
-  degreeName?: string;
+  query?: string;
+  appointment?: string;
+  degree?: string;
 };
