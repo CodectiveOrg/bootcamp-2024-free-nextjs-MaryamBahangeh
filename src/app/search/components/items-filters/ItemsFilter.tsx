@@ -30,7 +30,7 @@ function ItemsFilter({ title, options, fieldName }: Props) {
               dispatchFilters({
                 type: "updated_filtered",
                 key: fieldName,
-                value: option.label,
+                value: option.value,
               })
             }
           >
