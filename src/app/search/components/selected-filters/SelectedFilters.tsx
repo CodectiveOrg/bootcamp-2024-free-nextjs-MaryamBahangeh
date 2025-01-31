@@ -10,6 +10,7 @@ import { FiltersType } from "@/types/filters-type";
 import styles from "./SelectedFilters.module.css";
 import SolarTrashBinMinimalisticLinear from "@/icons/SolarTrashBinMinimalisticLinear";
 import Button, { Variant } from "@/components/Button/Button";
+import { APPOINTMENT_TIMES } from "@/options/appointment-time-options";
 
 function SelectedFilters() {
   const { dispatchFilters, filters } = useContext(FiltersContext);
@@ -34,7 +35,9 @@ function SelectedFilters() {
         <div className={styles["filters"]}>
           {filterKeys.map((key) => (
             <div className={styles.filter} key={key}>
-              {filters[key]}
+              {key === "appointment"
+                ? APPOINTMENT_TIMES.find((x) => x.value === filters[key])?.label
+                : filters[key]}
               <Button
                 variant={Variant.TEXT}
                 onClick={() => dispatchFilters({ type: "removed_filter", key })}
