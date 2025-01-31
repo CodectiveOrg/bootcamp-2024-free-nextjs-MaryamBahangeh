@@ -6,27 +6,16 @@
     display: flex;
     justify-content: space-between;
     font-weight: 700;
+    align-items: center;
 
-    .delete-all {
-      background-color: transparent;
-      border: none;
-      appearance: none;
-      outline: none;
-      cursor: pointer;
+    button {
       color: var(--color-danger);
-
-      padding-inline: 1rem;
-      padding-block: 0.25rem;
-
-      border-radius: var(--border-radius);
-      &:hover {
-        background-color: var(--color-surface-300);
-      }
     }
   }
 
   .filters {
     display: flex;
+
     gap: 0.5rem;
     flex-wrap: wrap;
 
@@ -44,14 +33,8 @@
         display: flex;
         align-items: center;
 
-        border: none;
-        background-color: transparent;
-        appearance: none;
         color: var(--color-danger);
-
-        &:hover {
-          cursor: pointer;
-        }
+        padding: 0;
       }
     }
   }

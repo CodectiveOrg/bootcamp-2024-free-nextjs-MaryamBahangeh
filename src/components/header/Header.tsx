@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
 import styles from "./Header.module.css";
+import Button, { Variant } from "@/components/Button/Button";
 
 const pages = [
   { href: "/", title: "Home" },
@@ -31,7 +32,7 @@ function Header() {
           ))}
         </ul>
       </nav>
-      <button>Login/ Sign up</button>
+      <Button variant={Variant.OUTLINE}>Login/ Sign up</Button>
     </header>
   );
 }

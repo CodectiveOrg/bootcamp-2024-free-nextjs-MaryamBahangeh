@@ -9,6 +9,7 @@ import { FiltersType } from "@/types/filters-type";
 
 import styles from "./SelectedFilters.module.css";
 import SolarTrashBinMinimalisticLinear from "@/icons/SolarTrashBinMinimalisticLinear";
+import Button, { Variant } from "@/components/Button/Button";
 
 function SelectedFilters() {
   const { dispatchFilters, filters } = useContext(FiltersContext);
@@ -21,12 +22,12 @@ function SelectedFilters() {
         <div className={styles.header}>
           <div>Filters:</div>
           {filterKeys.length > 0 && (
-            <button
-              className={styles["delete-all"]}
+            <Button
+              variant={Variant.TEXT}
               onClick={() => dispatchFilters({ type: "removed_all" })}
             >
               Delete All
-            </button>
+            </Button>
           )}
         </div>
 
@@ -34,11 +35,12 @@ function SelectedFilters() {
           {filterKeys.map((key) => (
             <div className={styles.filter} key={key}>
               {filters[key]}
-              <button
+              <Button
+                variant={Variant.TEXT}
                 onClick={() => dispatchFilters({ type: "removed_filter", key })}
               >
                 <SolarTrashBinMinimalisticLinear />
-              </button>
+              </Button>
             </div>
           ))}
         </div>

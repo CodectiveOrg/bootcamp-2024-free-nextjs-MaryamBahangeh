@@ -6,6 +6,7 @@ import MingcuteLocationLine from "@/icons/MingcuteLocationLine";
 import { DoctorModel } from "@/models/doctor";
 
 import styles from "./DoctorCard.module.css";
+import Button, { Color, Variant } from "@/components/Button/Button";
 
 type Props = {
   doctor: DoctorModel;
@@ -15,36 +16,30 @@ function DoctorCard({ doctor }: Props) {
   return (
     <Card>
       <div className={styles["doctor-card"]}>
-        <div className={styles.main}>
-          <div className={styles["primary-info"]}>
-            <Image
-              className={styles.image}
-              src={doctor.image}
-              alt="Doctor image"
-              width={70}
-              height={70}
-            />
+        <div className={styles["primary-info"]}>
+          <Image
+            className={styles.image}
+            src={doctor.image}
+            alt="Doctor image"
+            width={70}
+            height={70}
+          />
 
-            <div className={styles["doctor-info"]}>
-              <div className={styles.name}>{doctor.name}</div>
-              <div className={styles.description}>
-                {doctor.speciality.label} - {doctor.degree.label}
-              </div>
-              <div className={styles.rate}>
-                <StarBold className={styles.star} /> {doctor.rate}
-                <span> {" (" + doctor.totalVotes + " comments)"}</span>
-              </div>
-            </div>
+          <div className={styles.name}>{doctor.name}</div>
+          <div className={styles.speciality}>
+            {doctor.speciality.label} - {doctor.degree.label}
+          </div>
+          <div className={styles.rate}>
+            <StarBold className={styles.star} /> {doctor.rate}
+            <span> {" (" + doctor.totalVotes + " comments)"}</span>
           </div>
 
-          <div className={styles["other-info"]}>
-            <div>{doctor.description}</div>
-          </div>
+          <div className={styles.description}>{doctor.description}</div>
         </div>
 
         <div className={styles.line}></div>
 
-        <div className={styles.secondary}>
+        <div className={styles["secondary-info"]}>
           <div>
             Service type:
             <span className={styles.data}>{doctor.serviceTypeName}</span>
@@ -61,7 +56,9 @@ function DoctorCard({ doctor }: Props) {
           </div>
 
           <div>
-            <button>Book An Appointment</button>
+            <Button variant={Variant.SOLID} color={Color.PRIMARY}>
+              Book An Appointment
+            </Button>
           </div>
         </div>
       </div>

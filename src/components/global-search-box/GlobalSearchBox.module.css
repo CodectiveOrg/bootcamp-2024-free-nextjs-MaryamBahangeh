@@ -35,13 +35,6 @@
   }
 
   button {
-    background: transparent;
-
-    border: none;
-    border-radius: var(--border-radius);
-
-    padding: 0.5rem 0.5rem;
-
     svg {
       font-size: 1.5em;
     }
@@ -50,11 +43,6 @@
     gap: 0.5rem;
     align-items: center;
     justify-content: center;
-
-    &:hover {
-      cursor: pointer;
-      background-color: var(--color-gray-16);
-    }
   }
 
   &:focus-within {

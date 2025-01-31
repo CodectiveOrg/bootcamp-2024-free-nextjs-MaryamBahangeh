@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useContext, useEffect, useState } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import { FiltersContext } from "@/app/search/providers/FiltersProvider";
 
@@ -9,6 +9,7 @@ import MingcuteSearchLine from "@/icons/MingcuteSearchLine";
 import MingcuteLocationLine from "@/icons/MingcuteLocationLine";
 
 import styles from "./GlobalSearchBox.module.css";
+import Button, { Variant } from "@/components/Button/Button";
 
 function GlobalSearchBox() {
   const { filters, dispatchFilters } = useContext(FiltersContext);
@@ -57,10 +58,10 @@ function GlobalSearchBox() {
 
       <div className={styles.divider}></div>
 
-      <button>
+      <Button variant={Variant.TEXT}>
         <MingcuteLocationLine></MingcuteLocationLine>
         All Countries
-      </button>
+      </Button>
     </form>
   );
 }
