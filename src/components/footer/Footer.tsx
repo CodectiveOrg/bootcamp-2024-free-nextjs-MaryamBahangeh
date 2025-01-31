@@ -1,10 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
-
-import fbtoLogo from "../../assests/logo/fbto.svg";
-import vinkLogo from "../../assests/logo/vink.svg";
-import asr from "../../assests/logo/asr.svg";
-
 import MingcuteTelegramFill from "@/icons/MingcuteTelegramFill";
 import MingcuteYoutubeFill from "@/icons/MingcuteYoutubeFill";
 import MingcuteWhatsappFill from "@/icons/MingcuteWhatsappFill";
