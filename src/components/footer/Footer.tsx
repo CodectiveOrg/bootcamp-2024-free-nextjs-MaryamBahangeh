@@ -21,50 +21,29 @@ function Footer() {
         <div className={styles.logo}></div>
       </div>
 
-      <div className={styles.visuals}>
+      <div className={styles.socials}>
         <ul>
           <li>
-            <Link href="">
-              <Image src={fbtoLogo} width={50} alt=""></Image>
+            <Link href="" target="_blank">
+              <MingcuteTelegramFill />
             </Link>
           </li>
           <li>
-            <Link href="">
-              <Image src={vinkLogo} width={50} alt=""></Image>
+            <Link href="" target="_blank">
+              <MingcuteYoutubeFill />
             </Link>
           </li>
-
           <li>
-            <Link href="">
-              <Image src={asr} width={50} alt=""></Image>
+            <Link href="" target="_blank">
+              <MingcuteWhatsappFill />
+            </Link>
+          </li>
+          <li>
+            <Link href="" target="_blank">
+              <MingcuteLinkedinFill />
             </Link>
           </li>
         </ul>
-
-        <div className={styles.socials}>
-          <ul>
-            <li>
-              <Link href="" target="_blank">
-                <MingcuteTelegramFill />
-              </Link>
-            </li>
-            <li>
-              <Link href="" target="_blank">
-                <MingcuteYoutubeFill />
-              </Link>
-            </li>
-            <li>
-              <Link href="" target="_blank">
-                <MingcuteWhatsappFill />
-              </Link>
-            </li>
-            <li>
-              <Link href="" target="_blank">
-                <MingcuteLinkedinFill />
-              </Link>
-            </li>
-          </ul>
-        </div>
       </div>
     </footer>
   );
