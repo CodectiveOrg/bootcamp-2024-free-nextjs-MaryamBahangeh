@@ -5,12 +5,12 @@ import React, { useContext } from "react";
 import { FiltersContext } from "@/app/search/providers/FiltersProvider";
 
 import Card from "@/components/card/Card";
-import { FiltersType } from "@/types/filters-type";
-
-import styles from "./SelectedFilters.module.css";
 import SolarTrashBinMinimalisticLinear from "@/icons/SolarTrashBinMinimalisticLinear";
 import Button, { Variant } from "@/components/Button/Button";
+import { FiltersType } from "@/types/filters-type";
 import { APPOINTMENT_TIMES } from "@/options/appointment-time-options";
+
+import styles from "./SelectedFilters.module.css";
 
 function SelectedFilters() {
   const { dispatchFilters, filters } = useContext(FiltersContext);

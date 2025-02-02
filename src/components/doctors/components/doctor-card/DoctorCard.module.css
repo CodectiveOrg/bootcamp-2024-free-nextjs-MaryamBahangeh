@@ -50,6 +50,7 @@
       .star {
         color: var(--color-star);
       }
+
       > span {
         margin-inline-start: 0.5rem;
         color: var(--color-primary-darker);
