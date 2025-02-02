@@ -54,12 +54,12 @@ export default async function Page({
 }
 
 function generateDefaultFilters(searchParams: SearchParams): FiltersType {
-  const { specialityName, serviceTypeName, name } = searchParams;
+  const { speciality, serviceType, query } = searchParams;
 
   return {
-    name: normalizeFilter(name),
-    specialityName: normalizeFilter(specialityName),
-    serviceTypeName: normalizeFilter(serviceTypeName),
+    query: normalizeFilter(query),
+    speciality: normalizeFilter(speciality),
+    serviceType: normalizeFilter(serviceType),
   };
 }
 

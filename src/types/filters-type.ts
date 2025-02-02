@@ -1,7 +1,7 @@
 export type FiltersType = {
+  query?: string;
   speciality?: string;
   serviceType?: string;
-  name?: string;
   appointment?: string;
   degree?: string;
 };

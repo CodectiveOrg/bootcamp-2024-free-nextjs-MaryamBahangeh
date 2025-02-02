@@ -15,7 +15,6 @@ import { FiltersContext } from "@/app/search/providers/FiltersProvider";
 
 import { DoctorModel } from "@/models/doctor";
 import { doctors } from "@/assests/doctors";
-import { FiltersType } from "@/types/filters-type";
 import { SORT_OPTIONS } from "@/options/sort-options";
 import { SelectOptionType } from "@/types/select-option-type";
 
@@ -39,19 +38,13 @@ function DoctorsProvider({ children }: Props) {
 
   const isVisible = useCallback(
     (doctor: DoctorModel): boolean => {
-      const filterKeys = Object.keys(filters) as (keyof FiltersType)[];
-
-      const result: boolean[] = [];
-
-      filterKeys.map((key) => {
-        if (key === "name") {
-          result.push(doesSomeInclude(filters[key] as string, doctor));
-        } else {
-          result.push(doesInclude(filters[key] as string, key, doctor));
-        }
-      });
-
-      return result.find((x) => !x) == undefined;
+      return (
+        doesDoctorInclude(doctor, filters.query) &&
+        doesInclude(doctor.speciality.value, filters.speciality) &&
+        doesInclude(doctor.serviceType.value, filters.serviceType) &&
+        doesInclude(doctor.appointment.value, filters.appointment) &&
+        doesInclude(doctor.degree.value, filters.degree)
+      );
     },
     [filters],
   );
@@ -87,26 +80,31 @@ function DoctorsProvider({ children }: Props) {
   );
 }
 
-const doesSomeInclude = (filterValue: string, doctor: DoctorModel): boolean => {
-  if (filterValue === "") {
+function doesDoctorInclude(doctor: DoctorModel, query?: string): boolean {
+  if (!query) {
     return true;
   }
 
-  return (
-    doctor.name.toLowerCase().includes(filterValue.toLowerCase()) ||
-    doctor.address.toLowerCase().includes(filterValue.toLowerCase()) ||
-    doctor.speciality.label.toLowerCase().includes(filterValue.toLowerCase())
+  return doesSomeInclude(
+    [doctor.name, doctor.speciality.label, doctor.address, doctor.description],
+    query,
   );
-};
+}
 
-const doesInclude = (
-  filterValue: string,
-  filterKey: keyof FiltersType,
-  doctor: DoctorModel,
-): boolean => {
-  console.log("filterKey= " + filterKey);
-  console.log("filterValue= " + filterValue);
-  return (doctor[filterKey] as SelectOptionType).value === filterValue;
-};
+function doesSomeInclude(items: string[], query?: string): boolean {
+  if (!query) {
+    return true;
+  }
+
+  return items.some((item) => doesInclude(item, query));
+}
+
+function doesInclude(item: string, query?: string): boolean {
+  if (!query) {
+    return true;
+  }
+
+  return item.toLowerCase().includes(query.toLowerCase());
+}
 
 export default DoctorsProvider;

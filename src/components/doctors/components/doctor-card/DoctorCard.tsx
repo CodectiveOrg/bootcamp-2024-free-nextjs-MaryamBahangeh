@@ -42,7 +42,7 @@ function DoctorCard({ doctor }: Props) {
         <div className={styles["secondary-info"]}>
           <div>
             Service type:
-            <span className={styles.data}>{doctor.serviceTypeName}</span>
+            <span className={styles.data}>{doctor.serviceType.label}</span>
           </div>
 
           <div>

@@ -22,9 +22,9 @@ function ItemsFilter({ title, options, fieldName }: Props) {
         {options.map((option) => (
           <button
             key={option.label}
-            value={option.label}
+            value={option.value}
             className={
-              filters[fieldName] === option.label ? styles.selected : ""
+              filters[fieldName] === option.value ? styles.selected : ""
             }
             onClick={() =>
               dispatchFilters({

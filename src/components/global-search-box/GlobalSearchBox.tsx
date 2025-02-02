@@ -26,20 +26,20 @@ function GlobalSearchBox() {
       if (query) {
         dispatchFilters({
           type: "updated_filtered",
-          key: "name",
+          key: "query",
           value: query,
         });
       } else {
-        dispatchFilters({ type: "removed_filter", key: "name" });
+        dispatchFilters({ type: "removed_filter", key: "query" });
       }
     } else {
-      const href = query ? `/search/?name=${query}` : "/search";
+      const href = query ? `/search/?query=${query}` : "/search";
       router.push(href);
     }
   };
 
   useEffect(() => {
-    if (!filters.name) {
+    if (!filters.query) {
       setQuery("");
     }
   }, [filters]);
