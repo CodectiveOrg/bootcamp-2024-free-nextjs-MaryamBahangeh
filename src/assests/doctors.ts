@@ -35,7 +35,6 @@ export const doctors: DoctorModel[] = [
     id: "88820f0d-b576-9ffc-a81b4b1b4e7",
     name: "John William",
     serviceType: SERVICE_TYPE[1],
-
     image: john.src,
     rate: 2.8,
     totalVotes: 294,
@@ -49,7 +48,6 @@ export const doctors: DoctorModel[] = [
     id: "88820f0d-b576-335-9ffc-a81b1b4e7",
     name: "Mary Brown",
     serviceType: SERVICE_TYPE[0],
-
     image: mary.src,
     rate: 3.79,
     totalVotes: 894,
@@ -63,7 +61,6 @@ export const doctors: DoctorModel[] = [
     id: "8882000f0d-b576-335-9ffc-a81b4b1b4e7",
     name: "Jack Davis",
     serviceType: SERVICE_TYPE[1],
-
     image: jack.src,
     rate: 2.99,
     totalVotes: 504,
@@ -79,7 +76,6 @@ export const doctors: DoctorModel[] = [
     id: "97420f0d-b576-4f65-fc-a81b4b1b4e77",
     name: "Mateo Miller",
     serviceType: SERVICE_TYPE[1],
-
     image: mateo.src,
     rate: 4.25,
     totalVotes: 1594,
@@ -94,7 +90,6 @@ export const doctors: DoctorModel[] = [
     id: "88820f0d-76-9ffc-a81b4b1b4e7",
     name: "Martin Anderson",
     serviceType: SERVICE_TYPE[0],
-
     image: martin.src,
     rate: 3.99,
     totalVotes: 1204,
@@ -108,7 +103,6 @@ export const doctors: DoctorModel[] = [
     id: "88820f-b576-335ffc-a81b1b4e7",
     name: "Mary Taylor",
     serviceType: SERVICE_TYPE[0],
-
     image: mary.src,
     rate: 4.99,
     totalVotes: 834,
@@ -122,7 +116,6 @@ export const doctors: DoctorModel[] = [
     id: "8882000f-b576-335-9ffc-a81b4b1b4e7",
     name: "Jack Clark",
     serviceType: SERVICE_TYPE[1],
-
     image: jack.src,
     rate: 5,
     totalVotes: 5014,
@@ -138,7 +131,6 @@ export const doctors: DoctorModel[] = [
     id: "97420f0d-b576-4f6-a81b4b1b4e77",
     name: "Amaris Davenport",
     serviceType: SERVICE_TYPE[1],
-
     image: amaris.src,
     rate: 3.99,
     totalVotes: 1094,
@@ -154,7 +146,6 @@ export const doctors: DoctorModel[] = [
     id: "88820f0-576-9ffc-a81b4b1b4e7",
     name: "Lukas Magana",
     serviceType: SERVICE_TYPE[1],
-
     image: lukas.src,
     rate: 3.8,
     totalVotes: 694,
@@ -168,7 +159,6 @@ export const doctors: DoctorModel[] = [
     id: "88820d-b576-335-9ffc-a81b1b4e7",
     name: "Whitley Hail",
     serviceType: SERVICE_TYPE[0],
-
     image: whitley.src,
     rate: 4.22,
     totalVotes: 2264,
@@ -182,7 +172,6 @@ export const doctors: DoctorModel[] = [
     id: "8800f0d-b576-335-9ffc-a81b4b1b4e7",
     name: "Brody Stone",
     serviceType: SERVICE_TYPE[1],
-
     image: brody.src,
     rate: 3.7,
     totalVotes: 1014,
@@ -198,7 +187,6 @@ export const doctors: DoctorModel[] = [
     id: "88820f0d-b576-335ffc-a81b1b4e7",
     name: "River Strong",
     serviceType: SERVICE_TYPE[1],
-
     image: amaris.src,
     rate: 4.83,
     totalVotes: 456,
@@ -212,7 +200,6 @@ export const doctors: DoctorModel[] = [
     id: "8882000f-b576-335-9ffc-a84b1b4e7",
     name: "Atlas Sierra",
     serviceType: SERVICE_TYPE[0],
-
     image: lukas.src,
     rate: 3.7,
     totalVotes: 9814,
@@ -228,7 +215,6 @@ export const doctors: DoctorModel[] = [
     id: "97420f0d-b576-4f6-a84b1b4e77",
     name: "Abner Duran",
     serviceType: SERVICE_TYPE[0],
-
     image: jack.src,
     rate: 2.56,
     totalVotes: 7940,
@@ -244,7 +230,6 @@ export const doctors: DoctorModel[] = [
     id: "88820f0-576-9ffc-a84b1b4e7",
     name: "Jamal Tanner",
     serviceType: SERVICE_TYPE[0],
-
     image: lukas.src,
     rate: 4.6,
     totalVotes: 254,
