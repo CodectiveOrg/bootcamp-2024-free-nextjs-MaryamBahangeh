@@ -33,7 +33,7 @@
   }
 
   &.text {
-    background: transparent;
+    background-color: transparent;
     padding: 0.5rem 0.5rem;
     border: none;
 
